@@ -15,6 +15,7 @@ This project demonstrates the application of **Principal Component Analysis (PCA
 - [Project Goals](#project-goals)
 - [Technologies Used](#technologies-used)
 - [Results](#results)
+- [Key Takeaways](#key-takeaways)
 
 ---
 
@@ -66,4 +67,6 @@ The `load_digits()` dataset contains:
 
 ---
 
+## 🤝 Contributions
+Contributions, issues, and feature requests are welcome! Feel free to open an issue or submit a pull request.
 
