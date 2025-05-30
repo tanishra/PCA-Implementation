@@ -1,6 +1,11 @@
-# 🧠 PCA on Handwritten Digits Dataset (Scikit-learn `load_digits()`)
+# 🧠 PCA  on Handwritten Digits Dataset.
 
-This project demonstrates **Principal Component Analysis (PCA)** applied to the **`load_digits()`** dataset from **scikit-learn** — a collection of 8×8 grayscale images of handwritten digits (0–9). PCA is used here for **dimensionality reduction**, **data visualization**, and potentially **improving classification performance**.
+This project demonstrates the application of **Principal Component Analysis (PCA)** and **Logistic Regression** on the **`load_digits()`** dataset from `scikit-learn`. It includes:
+
+- Training a **Logistic Regression classifier** on the **original 64-dimensional** data
+- Applying **PCA for dimensionality reduction**
+- Retraining Logistic Regression on the **PCA-reduced data**
+- Comparing **model accuracy**, **performance**, and **execution time** before and after PCA
 
 ---
 
@@ -9,22 +14,56 @@ This project demonstrates **Principal Component Analysis (PCA)** applied to the 
 - [About the Dataset](#about-the-dataset)
 - [Project Goals](#project-goals)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [How to Run](#how-to-run)
-- [Visualizations](#visualizations)
 - [Results](#results)
-- [Further Improvements](#further-improvements)
-- [License](#license)
 
 ---
 
 ## 📊 About the Dataset
 
-The `load_digits()` dataset is a built-in dataset in `scikit-learn`. It contains:
+The `load_digits()` dataset contains:
 
-- **1797 images** of handwritten digits (0 through 9)
-- Each image is **8x8 pixels**, flattened into a 64-dimensional vector
+- **1797** grayscale images of handwritten digits (**0 to 9**)
+- Each image is **8×8 pixels**, flattened into a **64-dimensional vector**
 - Pixel values range from **0 (white)** to **16 (black)**
-- The `target` corresponds to the actual digit (0–9)
+- Each entry has a corresponding **label (0–9)**
+
+---
+
+## 🎯 Project Goals
+
+- Train a **Logistic Regression classifier** on original high-dimensional data
+- Use **PCA** to reduce dimensionality while preserving variance
+- Compare **classification accuracy and efficiency** before and after PCA
+
+---
+
+## 🧰 Technologies Used
+
+- Python 3.x
+- `scikit-learn` – for loading data, PCA, and Logistic Regression
+- `matplotlib` & `seaborn` – for data visualization
+- `numpy`, `pandas` – for data processing
+
+---
+
+## ✅ Results
+
+| Metric                     | Without PCA (64 features) | With PCA (29 components) |
+|----------------------------|---------------------------|---------------------------|
+| Accuracy                   | **97.22%**                | **96.44%**                |
+| Number of Features         | 64                        | 29                        |
+| Dimensionality Reduction   | ❌                        | ✅ ~55% fewer features     |
+| Training Time              | Slightly higher           | Slightly faster           |
+
+---
+
+## ✨ Key Takeaways
+
+- Logistic Regression achieves **97.22% accuracy** on the original 64-feature space.
+- After reducing the features to **29 principal components** using PCA, the model still maintains a strong **96.44% accuracy**.
+- PCA helped in **reducing dimensionality by ~55%**, while **retaining over 96% classification performance**.
+- This trade-off is often valuable when working with larger, high-dimensional datasets where training speed and generalization matter.
+
+---
 
 
